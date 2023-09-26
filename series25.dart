@@ -23,38 +23,22 @@ class _Grocerystore2State extends State<Grocerystore2> {
       builder: (BuildContext context) {
         return Container(
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.vertical(top: Radius.circular(50.0)),
+            borderRadius: BorderRadius.vertical(top: Radius.circular(20.0)),
           ),
-          child: ClipRRect(
-            borderRadius: BorderRadius.vertical(top: Radius.circular(50.0)),
             child: Container(
               // Customize the bottom sheet content here
               padding: EdgeInsets.all(16.0),
-              child: GridView.builder(
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2, // Set the number of columns in the grid
-                  crossAxisSpacing: 8.0,
-                  mainAxisSpacing: 8.0,
+              child: Center(
+                child: Text(
+                  'This is a bottom sheet!',
+                  style: TextStyle(
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
-                itemCount: 6, // Adjust the number of grid items as needed
-                itemBuilder: (context, index) {
-                  return Container(
-                    decoration: BoxDecoration(
-                      border: Border.all(color: Colors.grey),
-                      borderRadius: BorderRadius.circular(8.0),
-                    ),
-                    child: Column(
-                      children: [
-                        Image.asset('assets/images/watch1.jpg'), // Customize the image
-                        Text('Title $index'), // Customize the title
-                        Text('Description $index'), // Customize the description
-                      ],
-                    ),
-                  );
-                },
               ),
             ),
-          ),
+
         );
       },
     );
