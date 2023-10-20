@@ -1,111 +1,64 @@
+   import 'package:flutter/material.dart';
+import 'package:untitled/deletemodel.dart';
+import 'package:untitled/first.dart';
+import 'package:untitled/rest.dart';
+import 'package:get/get.dart';
 
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-import 'package:newproject/series6.dart';
-import 'package:newproject/series7.dart';
-import 'series2.dart';
-import 'list_part2.dart';
-
-import 'Scroll_list.dart';
-import 'list_view.dart';
-
-void main(){
-  runApp(Myapp());
+void main() {
+  runApp(const MyApp());
 }
-class Myapp extends StatelessWidget{
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
   @override
   Widget build(BuildContext context) {
-   return  MaterialApp(
-     title: 'List View',
-     theme: ThemeData(
-       primarySwatch: Colors.blue,
-     ),
-     home: MyHomePage(),
-   );
+    return GetMaterialApp(
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        useMaterial3: true,
+      ),
+      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+    );
   }
 }
-class MyHomePage extends StatelessWidget {
+class MyHomePage extends StatefulWidget {
+  const MyHomePage({super.key, required this.title});
+  final String title;
+  @override
+  State<MyHomePage> createState() => _MyHomePageState();
+}
+class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Flutter App'),
+        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        title: Text(widget.title),
       ),
       body: Center(
-        child:Column(
-          children: [ ElevatedButton(
-              child: Text('ListView.builder'),
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.green,
-              ),
-              onPressed:
-                  () =>   Navigator.push(context,
-                MaterialPageRoute(builder: (context) => SimpleListViewScreen()),
-              )
-          ),
-            OutlinedButton(
-                child: Text('Listview.separated'),
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.yellow,
-                ),
-                onPressed:
-                    () =>   Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => Listsecond()
-                  ),
-                )
+        child: Column(
+         // mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            ElevatedButton(onPressed: ()=>Navigator.push(context, MaterialPageRoute(builder: (context)=> Flutterapi())),
+                child: Text('First')
             ),
-            OutlinedButton(
-                child: Text('Scroll list'),
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.lightGreenAccent ,
-                ),
-                onPressed:
-                    () =>   Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => Scrolllist()
-                  ),
-                )
+            // ElevatedButton(onPressed: ()=>Navigator.push(context, MaterialPageRoute(builder: (context)=> Lights())),
+            //     child: Text('Api')
+            // ),
+            ElevatedButton(onPressed: ()=>Navigator.push(context, MaterialPageRoute(builder: (context)=> GetResponse())),
+                child: Text('Response')
             ),
-            OutlinedButton(
-                child: Text('Login Page'),
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.yellow,
-                ),
-                onPressed:
-                    () =>   Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => LoginApp1()
-                  ),
-                )
-            ),
-            OutlinedButton(
-                child: Text('pick image'),
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.lightGreenAccent ,
-                ),
-                onPressed:
-                    () =>   Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => ImagePickerWidget()
-                  ),
-                )
-            ),
-            OutlinedButton(
-                child: Text('Date and Time Picker'),
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.yellow,
-                ),
-                onPressed:
-                    () =>   Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => MyDateTimePicker()
-                  ),
-                )
-            ),
+            ElevatedButton(
+                child: Text('Delete'),
+                onPressed: (){
+                  Get.to(()=>MyApp9());
+                }
 
-
+            ),
 
           ],
-
-        )
+        ),
       ),
-
     );
   }
 }
