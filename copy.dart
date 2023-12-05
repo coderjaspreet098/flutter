@@ -81,7 +81,7 @@ class _LoginStartState extends State<LoginStart> {
                     labelText: 'Password',
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(10),
-                    ),
+                    ),     
                   ),
                 ),
               ),
@@ -92,7 +92,7 @@ class _LoginStartState extends State<LoginStart> {
                   width: 350,
                   child: ElevatedButton(
                     onPressed: () {
-                      DataModel1 datamodel= DataModel1  (
+                      DataModel1 datamodel= DataModel1   (
                         name: _firstname.text,
                         email: _email.text,
                         phone: _phone.text,

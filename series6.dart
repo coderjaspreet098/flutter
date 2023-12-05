@@ -39,6 +39,8 @@ class _ImagePickerWidgetState extends State<ImagePickerWidget> {
           statusBarColor: Colors.blue,
           backgroundColor: Colors.white,
           showCropGrid: false,
+          initAspectRatio: CropAspectRatioPreset.original,
+          lockAspectRatio: false,
         ),
           IOSUiSettings(
             title: 'Crop Image',

@@ -34,6 +34,7 @@ class LoginDetails extends StatelessWidget {
                   color: Colors.yellowAccent ,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10.0),
+
                   ),
 
                 ),

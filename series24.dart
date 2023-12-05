@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
-import 'package:newproject/series20.dart';
-import 'package:newproject/series21.dart';
-import 'package:newproject/series22.dart';
 import 'package:newproject/series25.dart';
 
 class Grocerystore extends StatefulWidget {
@@ -14,9 +11,9 @@ class _GrocerystoreState extends State<Grocerystore> {
   int _currentIndex = 0;
   List<Widget> _listbottom =<Widget>[
    Grocerystore1(),
-    SecondPage(),
-    ThirdPage(),
-    Firstpage(),
+    Firstpage1(),
+    Secondpage2(),
+    Thirdpage2(),
   ];
 
   @override
@@ -24,7 +21,7 @@ class _GrocerystoreState extends State<Grocerystore> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Grocery store'),
+          title: Text('Laundry store'),
         ),
         body:_listbottom.elementAt(_currentIndex),
 
@@ -33,13 +30,13 @@ class _GrocerystoreState extends State<Grocerystore> {
           height: 50.0,
           items: <Widget>[
             Icon(Icons.home, size: 30),
-            Icon(Icons.search, size: 30),
-            Icon(Icons.shopping_cart, size: 30),
-            Icon(Icons.person, size: 30),
+            Icon(Icons.location_on, size: 30),
+            Icon(Icons.add, size: 30),
+            Icon(Icons.settings, size: 30),
           ],
-          color: Colors.transparent, // Make the background transparent
+          color: Colors.blue,
           buttonBackgroundColor: Colors.white,
-          backgroundColor: Colors.transparent,
+          backgroundColor: Colors.greenAccent,
           onTap: (index) {
             setState(() {
               _currentIndex = index;
@@ -51,3 +48,34 @@ class _GrocerystoreState extends State<Grocerystore> {
     );
   }
 }
+
+class Firstpage1 extends StatelessWidget {
+  const Firstpage1({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Text('First page');
+  }
+}
+
+class Secondpage2 extends StatelessWidget {
+  const Secondpage2({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Text('Secondpage');
+  }
+}
+
+class Thirdpage2 extends StatelessWidget {
+  const Thirdpage2({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Text('Thirdpage');
+  }
+}
+
+
+
+
